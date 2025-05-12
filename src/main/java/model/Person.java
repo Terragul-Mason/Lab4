@@ -19,6 +19,30 @@ public class Person {
         this.birthDate = birthDate;
     }
 
+    public int getId() {
+        return id;
+    }
+
+    public String getName() {
+        return name;
+    }
+
+    public String getGender() {
+        return gender;
+    }
+
+    public Subdivision getSubdivision() {
+        return subdivision;
+    }
+
+    public double getSalary() {
+        return salary;
+    }
+
+    public LocalDate getBirthDate() {
+        return birthDate;
+    }
+
     @Override
     public String toString() {
         return name + " (" + gender + "), " + salary + ", родился " + birthDate + ", подразделение: " + subdivision.getName();
