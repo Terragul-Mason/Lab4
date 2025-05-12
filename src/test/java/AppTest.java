@@ -6,8 +6,16 @@ import java.util.List;
 
 import static org.junit.jupiter.api.Assertions.*;
 
+/**
+ * Юнит-тесты для класса App.
+ */
 public class AppTest {
 
+    /**
+     * Проверяет корректность чтения и парсинга CSV-файла.
+     *
+     * @throws Exception если чтение не удалось
+     */
     @Test
     public void testReadPeopleFromCSV() throws Exception {
         List<Person> people = App.readPeopleFromCSV("people.csv", ';');

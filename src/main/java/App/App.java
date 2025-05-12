@@ -13,7 +13,21 @@ import java.time.LocalDate;
 import java.time.format.DateTimeFormatter;
 import java.util.*;
 
+/**
+ * Главный класс приложения, выполняющего чтение CSV-файла
+ * с данными о людях и преобразование их в объекты Java.
+ */
 public class App {
+    /**
+     * Считывает CSV-файл и возвращает список объектов Person.
+     * CSV-файл должен иметь следующую структуру:
+     * id;name;gender;BirtDate;Division;Salary
+     *
+     * @param csvFilePath путь к CSV-файлу в ресурсах
+     * @param separator символ-разделитель (обычно ';')
+     * @return список объектов Person, считанных из файла
+     * @throws Exception если файл не найден или возникает ошибка при парсинге
+     */
     public static List<Person> readPeopleFromCSV(String csvFilePath, char separator) throws Exception {
         List<Person> people = new ArrayList<>();
         Map<String, Subdivision> subdivisionsMap = new HashMap<>();
@@ -50,6 +64,11 @@ public class App {
         return people;
     }
 
+    /**
+     * Точка входа в приложение. Печатает список людей из CSV-файла.
+     *
+     * @param args не используются
+     */
     public static void main(String[] args) {
         try {
             List<Person> people = readPeopleFromCSV("people.csv", ';');
